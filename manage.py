@@ -1,0 +1,14 @@
+#!/usr/bin/env python
+import os
+import sys
+
+from ConnectMe.wsgi import application
+
+WSGI_APPLICATION = 'ConnectMe.wsgi.application'
+
+if __name__ == "__main__":
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ConnectMe.settings")
+
+    from django.core.management import execute_from_command_line
+
+    execute_from_command_line(sys.argv)
